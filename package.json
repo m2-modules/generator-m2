@@ -1,6 +1,6 @@
 {
   "name": "@m2fw/generator-m2fw",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "M2 framework generator",
   "repository": "https://github.com/m2fw/generator-m2fw",
   "author": "Jay Lee <jaylee.possible@gmail.com>",
