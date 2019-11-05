@@ -1,0 +1,61 @@
+const Generator = require('yeoman-generator')
+const yosay = require('yosay')
+const chalk = require('chalk')
+const _ = require('lodash')
+
+module.exports = class extends Generator {
+  async prompting() {
+    this.log(
+      yosay(
+        `Welcome to ${chalk.blue('M2 framework generator')} for ${chalk.red(
+          'application'
+        )}`
+      )
+    )
+    this.answers = await this.prompt([
+      {
+        name: 'appName',
+        message: 'What is your application name?',
+        default: 'Application Name'
+      },
+      {
+        name: 'mainComponent',
+        message: 'What is your main component name?',
+        default: 'm2-app'
+      },
+      {
+        name: 'moduleName',
+        message: 'What is your module name?',
+        default: 'module-name'
+      },
+      {
+        name: 'runningPort',
+        message: 'Running port for webserver',
+        default: 4000
+      }
+    ])
+
+    this.answers.uccMainComponent = _.upperFirst(
+      _.camelCase(this.answers.mainComponent)
+    )
+  }
+
+  writing() {
+    this.fs.copyTpl(
+      [this.templatePath() + '/**/*'],
+      this.destinationPath(),
+      this.answers,
+      {},
+      { globOptions: { dot: true } }
+    )
+
+    this.fs.move(
+      this.destinationPath('src/main-app.js'),
+      this.destinationPath(`src/${this.answers.mainComponent}.js`)
+    )
+  }
+
+  install() {
+    this.yarnInstall()
+  }
+}
