@@ -1,0 +1,8 @@
+{
+  "skip": false,
+  "name": "sqlite",
+  "type": "sqlite",
+  "database": "sqlite.db",
+  "logging": false,
+  "entities": ["src/entities/**/*.ts"]
+}

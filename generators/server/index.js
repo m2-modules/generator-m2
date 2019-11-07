@@ -9,7 +9,7 @@ module.exports = class extends Generator {
     this.log(
       yosay(
         `Welcome to ${chalk.blue('M2 framework generator')} for ${chalk.red(
-          'application'
+          'server'
         )}`
       )
     )
@@ -20,25 +20,16 @@ module.exports = class extends Generator {
         default: 'Application Name'
       },
       {
-        name: 'mainComponent',
-        message: 'What is your main component name?',
-        default: 'm2-app'
-      },
-      {
         name: 'moduleName',
         message: 'What is your module name?',
         default: path.basename(process.cwd())
       },
       {
         name: 'runningPort',
-        message: 'Running port for webserver',
-        default: 4000
+        message: 'Running port for server',
+        default: 8080
       }
     ])
-
-    this.answers.uccMainComponent = _.upperFirst(
-      _.camelCase(this.answers.mainComponent)
-    )
   }
 
   writing() {
@@ -48,11 +39,6 @@ module.exports = class extends Generator {
       this.answers,
       {},
       { globOptions: { dot: true } }
-    )
-
-    this.fs.move(
-      this.destinationPath('src/main-app.js'),
-      this.destinationPath(`src/${this.answers.mainComponent}.js`)
     )
   }
 
