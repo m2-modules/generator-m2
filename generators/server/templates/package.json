@@ -11,20 +11,5 @@
     "serve": "node ./dist/src/app.js",
     "serve:dev": "node --inspect -r ts-node/register ./src/app.ts",
     "clean": "rm -rf ./dist"
-  },
-  "dependencies": {
-    "@m2fw/base-controller": "^0.0.1-beta.2",
-    "@m2fw/datasource": "^0.0.2-beta.1",
-    "@m2fw/menu": "^0.0.1-beta.3",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "reflect-metadata": "^0.1.13",
-    "sqlite3": "^4.1.0",
-    "typeorm": "^0.2.20"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.2",
-    "ts-node": "^8.4.1",
-    "typescript": "^3.7.2"
   }
 }
