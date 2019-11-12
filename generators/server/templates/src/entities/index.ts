@@ -1,4 +1,5 @@
-import App from './app'
+import { App } from './App'
+import { Menu } from '@m2fw/menu'
 
-export default [App]
-export { App }
+export const entities = [App, Menu]
+export { App, Menu }

@@ -1,10 +1,10 @@
-import express from 'express'
+import { createConnection } from '@m2fw/datasource'
 import bodyParser from 'body-parser'
+import express, { Request, Response, NextFunction } from 'express'
+import { entities } from './entities'
 import Router from './interfaces/router-interface'
 import middlewares from './middlewares'
-import routers from './routers'
-import entities from './entities'
-import { createConnection } from '@m2fw/datasource'
+import { routers } from './routers'
 
 const app = express()
 app.use(bodyParser.json())
@@ -17,36 +17,38 @@ middlewares.forEach((mw: any, idx: number) => {
 console.log(`${new Date().toLocaleString()}: Appyling middlewares is done`)
 
 console.log(`${new Date().toLocaleString()}: Start to apply routers...`)
-
 routers.forEach(({ context, router }: Router, idx: number) => {
-  router.use((req: any, _res: any, next) => {
-    console.table({
-      requested_at: new Date().toLocaleString(),
-      host: req.hostname,
-      base_url: req.baseUrl,
-      path: req.path,
-      original_url: req.originalUrl
-    })
-    next()
-  })
+  router.use(
+    (error: Error, _req: Request, res: Response, _next: NextFunction) => {
+      console.error(error.stack)
+      res.status(500).json(error.message)
+    }
+  )
 
   context = context.startsWith('/') ? context : '/' + context
   console.log(`${String(idx).padStart(2, '0')}. ${context}`)
-  app.use(context, router)
+  app.use('/api' + context, router)
 })
 console.log(`${new Date().toLocaleString()}: Applying routers is done`)
 
-createConnection(
-  {
-    name: 'default',
+createConnection({
+  name: 'main',
+  ormType: 'typeorm',
+  options: {
     type: 'sqlite',
     database: 'sqlite.db',
     synchronize: true,
     logging: true,
     entities
   },
-  () => {
+  connectedCallback: connction => {
     console.log('\x1b[36m%s\x1b[0m', 'Database is connected')
-    app.listen(<%= runningPort %>, () => console.log('\x1b[36m%s\x1b[0m', '<%= appName %> Server is running on port <%= runningPort %>'))
+
+    app.listen(8080, () => {
+      console.log(
+        '\x1b[36m%s\x1b[0m',
+        '<%= appName %> Server is running on port <%= runningPort %>'
+      )
+    })
   }
-)
+})

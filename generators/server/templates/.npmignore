@@ -2,3 +2,5 @@ node_modules
 .prettierrc
 yarn.lock
 sqlite.db
+src
+tsconfig.json

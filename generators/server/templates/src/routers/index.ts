@@ -1,2 +1,3 @@
-import appRouter from './app-router'
-export default [appRouter]
+import { appRouter } from './AppRouter'
+import { menuRouter } from '@m2fw/menu'
+export const routers = [appRouter, menuRouter]
