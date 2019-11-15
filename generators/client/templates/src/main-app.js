@@ -1,8 +1,13 @@
 import { html, LitElement } from 'lit-element'
 import { connect } from 'pwa-helpers/connect-mixin'
+import { layoutStyle } from './assets/styles/app-styles'
 import { store } from './redux/store'
 
 class <%= uccMainComponent %> extends connect(store)(LitElement) {
+  static get styles() {
+    return [layoutStyle]
+  }
+
   static get properties() {
     return {
       appName: String
@@ -11,7 +16,13 @@ class <%= uccMainComponent %> extends connect(store)(LitElement) {
 
   render() {
     return html`
-      <h1>${this.appName}</h1>
+      <header>
+        <h1>${this.appName}</h1>
+      </header>
+      <nav></nav>
+      <main></main>
+      <aside></aside>
+      <footer></footer>
     `
   }
 

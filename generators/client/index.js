@@ -58,7 +58,6 @@ module.exports = class extends Generator {
 
   install() {
     this.yarnInstall(['lit-element', 'pwa-helpers', 'redux', 'redux-thunk'])
-
     this.yarnInstall(
       [
         '@babel/cli',
@@ -68,7 +67,9 @@ module.exports = class extends Generator {
         'html-webpack-plugin',
         'webpack',
         'webpack-cli',
-        'webpack-dev-server'
+        'webpack-dev-server',
+        'style-loader',
+        'css-loader'
       ],
       {
         dev: true
