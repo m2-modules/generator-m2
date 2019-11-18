@@ -9,7 +9,7 @@ module.exports = class extends Generator {
     this.log(
       yosay(
         `Welcome to ${chalk.blue('M2 framework generator')} for ${chalk.red(
-          'application'
+          'client'
         )}`
       )
     )

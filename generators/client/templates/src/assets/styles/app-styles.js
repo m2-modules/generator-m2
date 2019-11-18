@@ -11,7 +11,7 @@ export const layoutStyle = css`
   }
   header {
     grid-area: header;
-    background-color: ;
+    background-color: tomato;
   }
   nav {
     grid-area: nav;
