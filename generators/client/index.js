@@ -57,7 +57,11 @@ module.exports = class extends Generator {
   }
 
   install() {
+    /* Install 3rd party dependencies */
     this.yarnInstall(['lit-element', 'pwa-helpers', 'redux', 'redux-thunk'])
+    /* Install M2FW dependencies */
+    this.yarnInstall(['@m2fw/redux-manager', '@m2fw/router'])
+    /* Install Dev dependencies */
     this.yarnInstall(
       [
         '@babel/cli',

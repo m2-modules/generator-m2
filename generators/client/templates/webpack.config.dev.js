@@ -3,10 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'development',
-  entry: './src/<%= mainComponent %>.js',
+  entry: './src/bootstrap.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '<%= mainComponent %>.js'
+    filename: '[name].bundle.js'
   },
   plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
   module: {
@@ -14,7 +14,7 @@ module.exports = {
       {
         test: /\.js$/,
         use: ['babel-loader'],
-        exclude: /node_modues/
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,

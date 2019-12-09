@@ -1,7 +1,7 @@
+import { store } from '@m2fw/redux-manager'
 import { html, LitElement } from 'lit-element'
 import { connect } from 'pwa-helpers/connect-mixin'
 import { layoutStyle } from './assets/styles/app-styles'
-import { store } from './redux/store'
 
 class <%= uccMainComponent %> extends connect(store)(LitElement) {
   static get styles() {
