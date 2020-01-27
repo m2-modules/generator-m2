@@ -68,6 +68,7 @@ module.exports = class extends Generator {
         '@babel/core',
         '@babel/preset-env',
         'babel-loader',
+        'babel-polyfill',
         'html-webpack-plugin',
         'webpack',
         'webpack-cli',
