@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
   },
+  devtool: 'cheap-module-source-map',
   plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
   module: {
     rules: [
