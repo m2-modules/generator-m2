@@ -51,8 +51,8 @@ module.exports = class extends Generator {
     )
 
     this.fs.move(
-      this.destinationPath('src/main-app.js'),
-      this.destinationPath(`src/${this.answers.mainComponent}.js`)
+      this.destinationPath('src/main-app.ts'),
+      this.destinationPath(`src/${this.answers.mainComponent}.ts`)
     )
   }
 
@@ -64,17 +64,14 @@ module.exports = class extends Generator {
     /* Install Dev dependencies */
     this.yarnInstall(
       [
-        '@babel/cli',
-        '@babel/core',
-        '@babel/preset-env',
-        'babel-loader',
-        'babel-polyfill',
         'html-webpack-plugin',
         'webpack',
         'webpack-cli',
         'webpack-dev-server',
         'style-loader',
-        'css-loader'
+        'css-loader',
+        'typescript',
+        'ts-loader'
       ],
       {
         dev: true

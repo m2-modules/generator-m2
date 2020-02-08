@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "target": "es6",
+    "experimentalDecorators": true,
+    "moduleResolution": "node"
+  },
+  "exclude": ["node_modules"]
+}

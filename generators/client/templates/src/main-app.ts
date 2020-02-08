@@ -1,17 +1,14 @@
 import { store } from '@m2fw/redux-manager'
-import { html, LitElement } from 'lit-element'
+import { html, LitElement, property, customElement } from 'lit-element'
 import { connect } from 'pwa-helpers/connect-mixin'
 import { layoutStyle } from './assets/styles/app-styles'
 
-class <%= uccMainComponent %> extends connect(store)(LitElement) {
+@customElement('<%= mainComponent %>')
+export class <%= uccMainComponent %> extends connect(store)(LitElement) {
+  @property({ type: String }) appName: string
+
   static get styles() {
     return [layoutStyle]
-  }
-
-  static get properties() {
-    return {
-      appName: String
-    }
   }
 
   render() {
@@ -26,9 +23,7 @@ class <%= uccMainComponent %> extends connect(store)(LitElement) {
     `
   }
 
-  stateChanged(state) {
+  stateChanged(state: any) {
     this.appName = state.app.name
   }
 }
-
-customElements.define('<%= mainComponent %>', <%= uccMainComponent %>)

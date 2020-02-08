@@ -3,7 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'production',
-  entry: ['babel-polyfill', './src/bootstrap.js'],
+  entry: ['./src/bootstrap.ts'],
+  resolve: {
+    extensions: ['.js', '.ts']
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js'
@@ -12,8 +15,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: ['babel-loader'],
+        test: /\.(js|ts)$/,
+        use: ['ts-loader'],
         exclude: /node_modules/
       },
       {
