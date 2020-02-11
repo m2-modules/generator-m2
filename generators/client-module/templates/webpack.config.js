@@ -1,27 +1,26 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   mode: 'production',
-  entry: ['./src/bootstrap.ts'],
+  entry: './src/index.ts',
   resolve: {
     extensions: ['.js', '.ts']
   },
+  externals: {
+    '@m2fw/redux-manager': '@m2fw/redux-manager'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].bundle.js'
+    filename: 'index.js',
+    libraryTarget: 'umd'
   },
-  plugins: [new HtmlWebpackPlugin({ template: './index.html' })],
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {
         test: /\.ts$/,
         use: ['ts-loader'],
         exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
       }
     ]
   }

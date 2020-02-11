@@ -1,0 +1,3 @@
+# <%= moduleName %>
+
+README for <%= moduleName %>

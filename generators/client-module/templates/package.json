@@ -1,0 +1,14 @@
+{
+  "name": "@m2fw/<%= moduleName %>",
+  "version": "0.0.1",
+  "description": "<%= moduleName %> powerd by M2 Framework",
+  "main": "dist/index.js",
+  "repository": "https://github.com/m2fw/<%= moduleName %>",
+  "author": "Jay Lee <jaylee.possible@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack",
+    "clean": "rm -rf ./dist",
+    "prepublishOnly": "npm run clean && npm run build"
+  }
+}
