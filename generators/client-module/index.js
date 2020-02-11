@@ -9,7 +9,7 @@ module.exports = class extends Generator {
     this.log(
       yosay(
         `Welcome to ${chalk.blue('M2 framework generator')} for ${chalk.red(
-          'client'
+          'Client module'
         )}`
       )
     )
@@ -21,8 +21,8 @@ module.exports = class extends Generator {
       }
     ])
 
-    this.answers.uccMainComponent = _.upperFirst(
-      _.camelCase(this.answers.mainComponent)
+    this.answers.uccModuleName = _.upperFirst(
+      _.camelCase(this.answers.moduleName)
     )
   }
 

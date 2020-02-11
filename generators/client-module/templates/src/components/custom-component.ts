@@ -13,6 +13,6 @@ export class <%= uccModuleName %> extends connect(store)(LitElement) {
   }
 
   stateChanged(state: any) {
-    console.log('<%= uccModuleName $> State Changed', state)
+    console.log('<%= uccModuleName %> State Changed', state)
   }
 }

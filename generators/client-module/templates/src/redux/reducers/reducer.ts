@@ -2,7 +2,7 @@ import { EXAMPLE_ACTION } from '../actions/action'
 import { Store } from '@m2fw/redux-manager'
 import { I<%= uccModuleName %>State } from '../interfaces/interface'
 
-const INITIAL_STATE: I<%= ussModuleName %>State = {
+const INITIAL_STATE: I<%= uccModuleName %>State = {
   prop1: 'prop1', 
   prop2: 'prop2'
 }
