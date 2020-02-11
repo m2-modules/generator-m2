@@ -51,8 +51,8 @@ module.exports = class extends Generator {
     )
 
     this.fs.move(
-      this.destinationPath('src/main-app.ts'),
-      this.destinationPath(`src/${this.answers.mainComponent}.ts`)
+      this.destinationPath('src/MainApp.ts'),
+      this.destinationPath(`src/${this.answers.uccMainComponent}.ts`)
     )
   }
 
