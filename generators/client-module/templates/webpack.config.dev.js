@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.ts',
   resolve: {
     extensions: ['.js', '.ts']
@@ -14,6 +14,7 @@ module.exports = {
     filename: 'index.js',
     libraryTarget: 'umd'
   },
+  devtool: 'eval-source-map',
   module: {
     rules: [
       {
