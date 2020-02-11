@@ -3,7 +3,10 @@
     "module": "amd",
     "target": "es6",
     "experimentalDecorators": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true
   },
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "outDir": "dist"
 }
