@@ -1,7 +1,7 @@
-import { css } from 'lit-element'
+import { css, CSSResult } from 'lit-element'
 import '../themes/app-themes.css'
 
-export const layoutStyle = css`
+export const layoutStyle: CSSResult = css`
   :host {
     flex: 1;
     display: grid;

@@ -2,6 +2,7 @@ const path = require('path')
 
 module.exports = {
   mode: 'development',
+  watch: true,
   entry: './src/index.ts',
   resolve: {
     extensions: ['.js', '.ts']
