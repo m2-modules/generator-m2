@@ -1,4 +1,4 @@
-import { EXAMPLE_ACTION } from '../actions/action'
+import { EXAMPLE_ACTION } from '../actions/<%= lccModuleName %>'
 import { Store } from '@m2fw/redux-manager'
 import { I<%= uccModuleName %>State } from '../../interfaces'
 
@@ -7,9 +7,9 @@ const INITIAL_STATE: I<%= uccModuleName %>State = {
   prop2: 'prop2'
 }
 
-export const <%= moduleName %> = (
+export const <%= lccModuleName %> = (
   state = INITIAL_STATE,
-  action: { type: string; <%= moduleName %>: I<%= uccModuleName %>State }
+  action: { type: string; <%= lccModuleName %>: I<%= uccModuleName %>State }
 ) => {
   switch (action.type) {
     case EXAMPLE_ACTION:
@@ -23,6 +23,6 @@ export const <%= moduleName %> = (
 export function exampleAction(store: Store, action: I<%= uccModuleName %>State): void {
   store.dispatch({
     type: EXAMPLE_ACTION,
-    <%= moduleName %>: action
+    <%= lccModuleName %>: action
   })
 }

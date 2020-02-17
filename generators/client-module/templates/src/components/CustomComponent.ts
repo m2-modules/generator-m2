@@ -8,7 +8,7 @@ import {
 } from 'lit-element'
 import { connect } from 'pwa-helpers/connect-mixin'
 
-@customElement('custom-component')
+@customElement('<%= moduleName %>')
 export class <%= uccModuleName %> extends connect(store)(LitElement) {
   @property({ type: Array }) pages: []
 

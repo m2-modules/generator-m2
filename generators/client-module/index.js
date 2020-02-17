@@ -17,11 +17,20 @@ module.exports = class extends Generator {
       {
         name: 'moduleName',
         message: 'What is your module name?',
-        default: path.basename(process.cwd())
+        default: path.basename(process.cwd()),
+        validate: answer => {
+          return answer.indexOf('-') > 0
+            ? true
+            : `Module name should have '-' in it.`
+        }
       }
     ])
 
     this.answers.uccModuleName = _.upperFirst(
+      _.camelCase(this.answers.moduleName)
+    )
+
+    this.answers.lccModuleName = _.lowerFirst(
       _.camelCase(this.answers.moduleName)
     )
   }
@@ -33,6 +42,28 @@ module.exports = class extends Generator {
       this.answers,
       {},
       { globOptions: { dot: true } }
+    )
+
+    this.fs.move(
+      this.destinationPath('src/components/CustomComponent.ts'),
+      this.destinationPath(`src/components/${this.answers.uccModuleName}.ts`)
+    )
+
+    this.fs.move(
+      this.destinationPath('src/interfaces/interface.ts'),
+      this.destinationPath(`src/interfaces/I${this.answers.uccModuleName}.ts`)
+    )
+
+    this.fs.move(
+      this.destinationPath('src/redux/actions/action.ts'),
+      this.destinationPath(`src/redux/actions/${this.answers.lccModuleName}.ts`)
+    )
+
+    this.fs.move(
+      this.destinationPath('src/redux/reducers/reducer.ts'),
+      this.destinationPath(
+        `src/redux/reducers/${this.answers.lccModuleName}.ts`
+      )
     )
   }
 

@@ -1,1 +1,1 @@
-export * from './custom-component'
+export * from './<%= uccModuleName %>'
