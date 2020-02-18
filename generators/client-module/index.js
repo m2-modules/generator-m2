@@ -17,12 +17,7 @@ module.exports = class extends Generator {
       {
         name: 'moduleName',
         message: 'What is your module name?',
-        default: path.basename(process.cwd()),
-        validate: answer => {
-          return answer.indexOf('-') > 0
-            ? true
-            : `Module name should have '-' in it.`
-        }
+        default: path.basename(process.cwd())
       }
     ])
 
