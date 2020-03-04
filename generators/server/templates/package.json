@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "build": "tsc",
+    "build:dev": "tsc -w",
     "serve": "node ./dist/src/app.js",
     "serve:dev": "node --inspect -r ts-node/register ./src/app.ts",
     "clean": "rm -rf ./dist"
