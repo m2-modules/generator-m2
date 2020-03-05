@@ -46,6 +46,7 @@ module.exports = class extends Generator {
     this.yarnInstall([
       '@m2fw/base-controller',
       '@m2fw/datasource',
+      '@m2fw/graphql-manager',
       '@m2fw/menu',
       'body-parser',
       'express',
@@ -54,7 +55,7 @@ module.exports = class extends Generator {
       'typeorm'
     ])
 
-    this.yarnInstall(['@types/express', 'ts-node', 'typescript'], {
+    this.yarnInstall(['@types/express', 'ts-node', 'typescript', 'nodemon'], {
       dev: true
     })
   }
