@@ -1,7 +1,7 @@
 {
   "name": "@m2fw/<%= moduleName %>",
   "version": "0.0.1",
-  "description": "<%= moduleName %> powerd by M2 Framework",
+  "description": "<%= moduleName %> powered by M2 Framework",
   "main": "app.js",
   "repository": "https://github.com/m2fw/<%= moduleName %>",
   "author": "Jay Lee <jaylee.possible@gmail.com>",
