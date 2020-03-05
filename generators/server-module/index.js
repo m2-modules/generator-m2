@@ -65,18 +65,7 @@ module.exports = class extends Generator {
   }
 
   install() {
-    this.yarnInstall([
-      '@m2fw/base-controller',
-      '@m2fw/datasource',
-      '@m2fw/menu',
-      'body-parser',
-      'express',
-      'reflect-metadata',
-      'sqlite3',
-      'typeorm'
-    ])
-
-    this.yarnInstall(['@types/express', 'ts-node', 'typescript'], {
+    this.yarnInstall(['typescript'], {
       dev: true
     })
   }
