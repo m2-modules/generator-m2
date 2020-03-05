@@ -4,3 +4,4 @@ yarn.lock
 sqlite.db
 src
 tsconfig.json
+nodemon.json
