@@ -20,6 +20,7 @@ export const layoutStyle: CSSResult = css`
   main {
     grid-area: main;
     background-color: skyblue;
+    overflow: auto;
   }
   aside {
     grid-area: aside;
