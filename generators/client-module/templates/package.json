@@ -7,8 +7,8 @@
   "author": "Jay Lee <jaylee.possible@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:dev": "webpack --config ./webpack.config.dev.js",
-    "build": "webpack",
+    "build:dev": "npm run clean && webpack --config ./webpack.config.dev.js",
+    "build": "npm run clean && webpack",
     "clean": "rm -rf ./dist",
     "prepublishOnly": "npm run clean && npm run build"
   }

@@ -10,7 +10,7 @@
     "build": "tsc",
     "build:dev": "tsc -w",
     "serve": "node ./dist/src/app.js",
-    "serve:dev": "nodemon --watch src --watch node_modules/@m2fw --exec 'node --inspect -r ts-node/register ./src/app.ts'",
+    "serve:dev": "npm run clean && nodemon --watch src --watch node_modules/@m2fw --exec 'node --inspect -r ts-node/register ./src/app.ts'",
     "clean": "rm -rf ./dist"
   }
 }
