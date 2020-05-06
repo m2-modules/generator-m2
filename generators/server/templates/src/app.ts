@@ -2,8 +2,8 @@ import { createConnection } from '@m2fw/datasource'
 import bodyParser from 'body-parser'
 import express, { Request, Response, NextFunction } from 'express'
 import { entities } from './entities'
-import Router from './interfaces/router-interface'
-import middlewares from './middlewares'
+import { IRouter } from './interfaces'
+import { middlewares } from './middlewares'
 import { routers } from './routers'
 
 const app = express()
@@ -17,7 +17,7 @@ middlewares.forEach((mw: any, idx: number) => {
 console.log(`${new Date().toLocaleString()}: Appyling middlewares is done`)
 
 console.log(`${new Date().toLocaleString()}: Start to apply routers...`)
-routers.forEach(({ context, router }: Router, idx: number) => {
+routers.forEach(({ context, router }: IRouter, idx: number) => {
   router.use(
     (error: Error, _req: Request, res: Response, _next: NextFunction) => {
       console.error(error.stack)
@@ -39,9 +39,9 @@ createConnection({
     database: 'sqlite.db',
     synchronize: true,
     logging: true,
-    entities
+    entities,
   },
-  connectedCallback: connction => {
+  connectedCallback: (connction) => {
     console.log('\x1b[36m%s\x1b[0m', 'Database is connected')
 
     app.listen(8080, () => {
@@ -50,5 +50,5 @@ createConnection({
         '<%= appName %> Server is running on port <%= runningPort %>'
       )
     })
-  }
+  },
 })

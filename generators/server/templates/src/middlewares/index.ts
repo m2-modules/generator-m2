@@ -1,3 +1,3 @@
-import filterMiddleware from './filter-middleware'
+import { filterMiddleware } from './FilterMiddleware'
 
-export default [filterMiddleware]
+export const middlewares = [filterMiddleware]
