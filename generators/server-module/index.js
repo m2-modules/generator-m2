@@ -60,7 +60,7 @@ module.exports = class extends Generator {
 
     this.fs.move(
       this.destinationPath('src/interfaces/IModule.ts'),
-      this.destinationPath(`src/interfaces/I${this.answers.uccModuleName}`)
+      this.destinationPath(`src/interfaces/I${this.answers.uccModuleName}.ts`)
     )
 
     this.fs.move(
