@@ -70,6 +70,10 @@ module.exports = class extends Generator {
   }
 
   install() {
+    /** 3rd party dependencies installation */
+    this.yarnInstall(['typeorm'])
+
+    /** Dev dependencies installation */
     this.yarnInstall(['typescript'], {
       dev: true,
     })
