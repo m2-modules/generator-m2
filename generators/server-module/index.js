@@ -77,7 +77,7 @@ module.exports = class extends Generator {
     this.yarnInstall(['@m2fw/base-controller', '@m2fw/datasource'])
 
     /** Dev dependencies installation */
-    this.yarnInstall(['typescript', '@types/node'], {
+    this.yarnInstall(['typescript', '@types/node', '@types/express'], {
       dev: true,
     })
   }
