@@ -6,7 +6,7 @@ const <%= lccModuleName %>Controller = new <%= uccModuleName %>Controller()
 
 /* */
 router.post('/', async (req: Request, res: Response) => {
-  res.json(await <%= lccModuleName %>Controller.create(req.body))
+  res.json(await <%= lccModuleName %>Controller.insert(req.body))
 })
 
 router.get('/', async (req: Request, res: Response) => {
