@@ -18,8 +18,8 @@ module.exports = class extends Generator {
       {
         name: 'moduleName',
         message: 'What is your module name?',
-        default: path.basename(process.cwd())
-      }
+        default: path.basename(process.cwd()),
+      },
     ])
 
     this.answers.uccModuleName = _.upperFirst(
@@ -59,6 +59,11 @@ module.exports = class extends Generator {
     )
 
     this.fs.move(
+      this.destinationPath('src/interfaces/IModule.ts'),
+      this.destinationPath(`src/interfaces/I${this.answers.uccModuleName}`)
+    )
+
+    this.fs.move(
       this.destinationPath('src/routers/ModuleRouter.ts'),
       this.destinationPath(`src/routers/${this.answers.uccModuleName}Router.ts`)
     )
@@ -66,7 +71,7 @@ module.exports = class extends Generator {
 
   install() {
     this.yarnInstall(['typescript'], {
-      dev: true
+      dev: true,
     })
   }
 }
