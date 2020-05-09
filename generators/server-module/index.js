@@ -73,8 +73,11 @@ module.exports = class extends Generator {
     /** 3rd party dependencies installation */
     this.yarnInstall(['typeorm'])
 
+    /** M2FW dependencies installation */
+    this.yarnInstall(['@m2fw/base-controller', '@m2fw/datasource'])
+
     /** Dev dependencies installation */
-    this.yarnInstall(['typescript'], {
+    this.yarnInstall(['typescript', '@types/node'], {
       dev: true,
     })
   }
