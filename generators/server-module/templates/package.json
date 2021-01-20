@@ -11,5 +11,15 @@
     "build": "npm run clean && tsc",
     "prepublishOnly": "npm run build",
     "test": "jest"
+  },
+  "jest": {
+    "transform": {
+      ".ts": "../../node_modules/ts-jest"
+    },
+    "testRegex": "tests/.*|\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ]
   }
 }
