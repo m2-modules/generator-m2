@@ -4,7 +4,9 @@ const chalk = require('chalk')
 const path = require('path')
 const _ = require('lodash')
 
-module.exports = class extends Generator {
+module.exports = class extends (
+  Generator
+) {
   async prompting() {
     this.log(
       yosay(
@@ -77,8 +79,11 @@ module.exports = class extends Generator {
     this.yarnInstall(['@m2fw/base-controller', '@m2fw/datasource'])
 
     /** Dev dependencies installation */
-    this.yarnInstall(['typescript', '@types/node', '@types/express'], {
-      dev: true,
-    })
+    this.yarnInstall(
+      ['typescript', '@types/node', '@types/express', 'jest', 'ts-jest'],
+      {
+        dev: true,
+      }
+    )
   }
 }
