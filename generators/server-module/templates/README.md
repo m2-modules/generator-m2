@@ -1,3 +1,3 @@
-# Menu module
+# <%= moduleName %>
 
-M2 framework server side module
+README for <%= moduleName %>
