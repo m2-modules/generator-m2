@@ -44,10 +44,6 @@ module.exports = class extends Generator {
 
   install() {
     this.yarnInstall([
-      '@m2-modules/base-controller',
-      '@m2-modules/datasource',
-      '@m2-modules/graphql-manager',
-      '@m2-modules/menu',
       'body-parser',
       'express',
       'reflect-metadata',
