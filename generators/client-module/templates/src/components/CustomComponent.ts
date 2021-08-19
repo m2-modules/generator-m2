@@ -1,4 +1,4 @@
-import { store } from '@m2fw/redux-manager'
+import { store } from '@m2-modules/redux-manager'
 import {
   customElement,
   LitElement,

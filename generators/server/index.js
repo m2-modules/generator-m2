@@ -17,18 +17,18 @@ module.exports = class extends Generator {
       {
         name: 'appName',
         message: 'What is your application name?',
-        default: 'Application Name'
+        default: 'Application Name',
       },
       {
         name: 'moduleName',
         message: 'What is your module name?',
-        default: path.basename(process.cwd())
+        default: path.basename(process.cwd()),
       },
       {
         name: 'runningPort',
         message: 'Running port for server',
-        default: 8080
-      }
+        default: 8080,
+      },
     ])
   }
 
@@ -44,19 +44,19 @@ module.exports = class extends Generator {
 
   install() {
     this.yarnInstall([
-      '@m2fw/base-controller',
-      '@m2fw/datasource',
-      '@m2fw/graphql-manager',
-      '@m2fw/menu',
+      '@m2-modules/base-controller',
+      '@m2-modules/datasource',
+      '@m2-modules/graphql-manager',
+      '@m2-modules/menu',
       'body-parser',
       'express',
       'reflect-metadata',
       'sqlite3',
-      'typeorm'
+      'typeorm',
     ])
 
     this.yarnInstall(['@types/express', 'ts-node', 'typescript', 'nodemon'], {
-      dev: true
+      dev: true,
     })
   }
 }

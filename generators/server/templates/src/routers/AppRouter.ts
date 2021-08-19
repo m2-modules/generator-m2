@@ -1,4 +1,4 @@
-import { baseRouterMiddleware } from '@m2fw/base-controller'
+import { baseRouterMiddleware } from '@m2-modules/base-controller'
 import express, { NextFunction, Response } from 'express'
 import { AppController } from '../controllers'
 
@@ -13,7 +13,7 @@ router.use((req: any, _res: Response, next: NextFunction) => {
     host: req.hostname,
     base_url: req.baseUrl,
     path: req.path,
-    original_url: req.originalUrl
+    original_url: req.originalUrl,
   })
   next()
 })
@@ -22,7 +22,7 @@ router.get('/info', (_req: any, res: Response, next: NextFunction) => {
   try {
     res.json({
       name: AppController.appName,
-      version: AppController.appVersion
+      version: AppController.appVersion,
     })
   } catch (e) {
     next(e)
@@ -80,7 +80,7 @@ router.put('/:id', async (req: any, res: Response, next: NextFunction) => {
     res.json(
       await appController.update({
         id: req.params.id,
-        ...req.body
+        ...req.body,
       })
     )
   } catch (e) {

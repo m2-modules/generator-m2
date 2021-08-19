@@ -1,5 +1,5 @@
 import { EXAMPLE_ACTION } from '../actions/<%= lccModuleName %>'
-import { Store } from '@m2fw/redux-manager'
+import { Store } from '@m2-modules/redux-manager'
 import { I<%= uccModuleName %>State } from '../../interfaces'
 
 const INITIAL_STATE: I<%= uccModuleName %>State = {

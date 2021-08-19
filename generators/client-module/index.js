@@ -17,8 +17,8 @@ module.exports = class extends Generator {
       {
         name: 'moduleName',
         message: 'What is your module name?',
-        default: path.basename(process.cwd())
-      }
+        default: path.basename(process.cwd()),
+      },
     ])
 
     this.answers.uccModuleName = _.upperFirst(
@@ -65,11 +65,11 @@ module.exports = class extends Generator {
   install() {
     /* Install 3rd party dependencies */
     this.yarnInstall(['lit-element', 'pwa-helpers'])
-    /* Install M2FW dependencies */
-    this.yarnInstall(['@m2fw/redux-manager'])
+    /* Install m2-modules dependencies */
+    this.yarnInstall(['@m2-modules/redux-manager'])
     /* Install Dev dependencies */
     this.yarnInstall(['ts-loader', 'typescript', 'webpack', 'webpack-cli'], {
-      dev: true
+      dev: true,
     })
   }
 }

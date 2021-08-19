@@ -17,23 +17,23 @@ module.exports = class extends Generator {
       {
         name: 'appName',
         message: 'What is your application name?',
-        default: 'Application Name'
+        default: 'Application Name',
       },
       {
         name: 'mainComponent',
         message: 'What is your main component name?',
-        default: 'm2-app'
+        default: 'm2-app',
       },
       {
         name: 'moduleName',
         message: 'What is your module name?',
-        default: path.basename(process.cwd())
+        default: path.basename(process.cwd()),
       },
       {
         name: 'runningPort',
         message: 'Running port for webserver',
-        default: 4000
-      }
+        default: 4000,
+      },
     ])
 
     this.answers.uccMainComponent = _.upperFirst(
@@ -59,8 +59,8 @@ module.exports = class extends Generator {
   install() {
     /* Install 3rd party dependencies */
     this.yarnInstall(['lit-element', 'pwa-helpers', 'redux', 'redux-thunk'])
-    /* Install M2FW dependencies */
-    this.yarnInstall(['@m2fw/redux-manager', '@m2fw/router'])
+    /* Install m2-modules dependencies */
+    this.yarnInstall(['@m2-modules/redux-manager', '@m2-modules/router'])
     /* Install Dev dependencies */
     this.yarnInstall(
       [
@@ -71,10 +71,10 @@ module.exports = class extends Generator {
         'style-loader',
         'css-loader',
         'typescript',
-        'ts-loader'
+        'ts-loader',
       ],
       {
-        dev: true
+        dev: true,
       }
     )
   }

@@ -1,4 +1,4 @@
-import { BaseController } from '@m2fw/base-controller'
+import { BaseController } from '@m2-modules/base-controller'
 import packageJson from '../../package.json'
 import { App } from '../entities'
 

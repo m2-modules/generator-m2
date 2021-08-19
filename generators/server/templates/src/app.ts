@@ -1,4 +1,4 @@
-import { createConnection } from '@m2fw/datasource'
+import { createConnection } from '@m2-modules/datasource'
 import bodyParser from 'body-parser'
 import express, { Request, Response, NextFunction } from 'express'
 import { entities } from './entities'
